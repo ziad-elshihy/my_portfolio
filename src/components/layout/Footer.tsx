@@ -7,8 +7,8 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border bg-card/50">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
@@ -45,7 +45,7 @@ export function Footer() {
           </div>
 
           {/* Social */}
-          <div className="space-y-4">
+          <div className="space-y-4 sm:col-span-2 md:col-span-1">
             <h4 className="font-semibold text-foreground">Connect</h4>
             <div className="flex gap-4">
               <a
@@ -77,7 +77,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-sm text-muted-foreground">
             © {currentYear} {siteConfig.name}. All rights reserved.
           </p>

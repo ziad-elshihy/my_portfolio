@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -12,85 +13,120 @@ export function Hero() {
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4 py-12 md:py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-3 md:px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
+          >
             <CheckCircle className="w-4 h-4 text-primary" />
-            <span className="text-sm text-primary font-medium">
+            <span className="text-xs md:text-sm text-primary font-medium">
               Available for Freelance & Full-time Roles
             </span>
-          </div>
+          </motion.div>
 
           {/* Profile Image (Optional) */}
           {siteConfig.showProfileImage && (
-            <div className="mb-8 animate-fade-in">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mb-8"
+            >
               <img
                 src={siteConfig.profileImageSrc}
                 alt={siteConfig.name}
-                className="w-32 h-32 rounded-full mx-auto border-4 border-primary/30 object-cover"
+                className="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto border-4 border-primary/30 object-cover"
               />
-            </div>
+            </motion.div>
           )}
 
           {/* Name & Title */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
+          >
             Hi, I'm{" "}
             <span className="gradient-text">{siteConfig.name}</span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-2 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-2"
+          >
             {siteConfig.title}
-          </p>
+          </motion.p>
 
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-base md:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto px-4"
+          >
             {siteConfig.description}
-          </p>
+          </motion.p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <Button asChild size="lg" className="glow-effect group">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-12 md:mb-16 px-4"
+          >
+            <Button asChild size="lg" className="glow-effect group w-full sm:w-auto">
               <a href={siteConfig.cvDownloadUrl} download>
                 <Download className="w-5 h-5 mr-2" />
                 Download CV
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
               <Link to="/contact">
                 <Mail className="w-5 h-5 mr-2" />
                 Contact Me
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-          </div>
+          </motion.div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto px-4"
+          >
             <div className="stat-card">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">
+              <div className="text-2xl md:text-3xl lg:text-4xl font-bold gradient-text mb-1">
                 {siteConfig.stats.testCases}
               </div>
-              <div className="text-muted-foreground text-sm">
+              <div className="text-muted-foreground text-xs md:text-sm">
                 Test Cases Written
               </div>
             </div>
             <div className="stat-card">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">
+              <div className="text-2xl md:text-3xl lg:text-4xl font-bold gradient-text mb-1">
                 {siteConfig.stats.bugsReported}
               </div>
-              <div className="text-muted-foreground text-sm">
+              <div className="text-muted-foreground text-xs md:text-sm">
                 Bugs Reported
               </div>
             </div>
             <div className="stat-card">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">
+              <div className="text-2xl md:text-3xl lg:text-4xl font-bold gradient-text mb-1">
                 3+
               </div>
-              <div className="text-muted-foreground text-sm">
+              <div className="text-muted-foreground text-xs md:text-sm">
                 {siteConfig.stats.platforms}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
