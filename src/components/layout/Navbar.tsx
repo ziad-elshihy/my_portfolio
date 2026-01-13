@@ -1,0 +1,97 @@
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Terminal } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/config/siteConfig";
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/skills", label: "Skills" },
+  { href: "/projects", label: "Projects" },
+  { href: "/experience", label: "Experience" },
+  { href: "/certifications", label: "Certifications" },
+  { href: "/contact", label: "Contact" },
+];
+
+export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-t-0 rounded-none border-x-0">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+              <Terminal className="w-4 h-4 text-primary" />
+            </div>
+            <span className="font-semibold text-foreground">
+              {siteConfig.name.split(" ")[0]}
+              <span className="text-primary">.</span>
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`nav-link ${
+                  location.pathname === link.href ? "nav-link-active" : ""
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <Button asChild size="sm" className="glow-effect">
+              <a href={siteConfig.cvDownloadUrl} download>
+                Download CV
+              </a>
+            </Button>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden p-2 text-foreground"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden py-4 border-t border-border animate-fade-in">
+            <div className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`nav-link py-2 ${
+                    location.pathname === link.href ? "nav-link-active" : ""
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Button asChild size="sm" className="w-full mt-2">
+                <a href={siteConfig.cvDownloadUrl} download>
+                  Download CV
+                </a>
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+}
