@@ -2,8 +2,8 @@
 export const siteConfig = {
   name: "Ziad Elshihy",
   title: "QA Tester / Software Tester",
-  location: "Cairo, Egypt",
-  email: "ziad.elshihy@example.com", // Update with real email
+  location: "Egypt",
+  email: "elshihyziad@gmail.com", // Update with real email
   linkedin: "https://linkedin.com/in/ziadelshihy", // Update with real LinkedIn
   github: "https://github.com/ziadelshihy", // Update with real GitHub
   
@@ -19,7 +19,7 @@ export const siteConfig = {
   },
   
   // Value proposition
-  tagline: "Junior QA Engineer with Real-World Project Experience",
+  tagline: "Junior QA Tester with Real-World Project Experience",
   description: "Ensuring software quality through meticulous testing, detailed bug reporting, and a passion for delivering flawless user experiences.",
   
   // CTA
