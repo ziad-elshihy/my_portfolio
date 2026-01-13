@@ -1,7 +1,7 @@
 // Site configuration - easy to modify
 export const siteConfig = {
   name: "Ziad Elshihy",
-  title: "QC Engineer / Software Tester",
+  title: "QA Tester / Software Tester",
   location: "Cairo, Egypt",
   email: "ziad.elshihy@example.com", // Update with real email
   linkedin: "https://linkedin.com/in/ziadelshihy", // Update with real LinkedIn
@@ -92,7 +92,7 @@ export const certifications = [
 export const experience = [
   {
     id: "1",
-    title: "QC Engineer",
+    title: "QA Tester",
     company: "Freelance / Project-Based",
     period: "2024 - Present",
     description: "Working on real client projects, performing manual and API testing for web and mobile applications.",
