@@ -2,6 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { skills } from "@/config/siteConfig";
 import { TestTube, Server, Zap, Wrench, Code, Monitor } from "lucide-react";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 
 const skillSections = [
   {
@@ -45,39 +47,39 @@ const skillSections = [
 const Skills = () => {
   return (
     <Layout>
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <SectionHeader
-            title="Technical Skills"
-            subtitle="A comprehensive toolkit for ensuring software quality across all platforms"
-          />
+          <ScrollReveal>
+            <SectionHeader
+              title="Technical Skills"
+              subtitle="A comprehensive toolkit for ensuring software quality across all platforms"
+            />
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {skillSections.map((section, index) => (
-              <div
-                key={section.title}
-                className="glass-card p-6 hover:border-primary/50 transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
-                  <section.icon className="w-7 h-7 text-primary" />
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
+            {skillSections.map((section) => (
+              <StaggerItem key={section.title}>
+                <div className="glass-card p-5 md:p-6 hover:border-primary/50 transition-all duration-300 h-full">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
+                    <section.icon className="w-6 h-6 md:w-7 md:h-7 text-primary" />
+                  </div>
+
+                  <h3 className="text-lg md:text-xl font-semibold mb-2">{section.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {section.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {section.skills.map((skill) => (
+                      <span key={skill} className="skill-badge text-xs md:text-sm">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-
-                <h3 className="text-xl font-semibold mb-2">{section.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {section.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {section.skills.map((skill) => (
-                    <span key={skill} className="skill-badge">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
     </Layout>
