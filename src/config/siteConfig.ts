@@ -23,7 +23,7 @@ export const siteConfig = {
   description: "Ensuring software quality through meticulous testing, detailed bug reporting, and a passion for delivering flawless user experiences.",
   
   // CTA
-  cvDownloadUrl: "/cv/Ziad_Elshihy_CV.pdf", // Add your CV to public/cv folder
+  cvDownloadUrl: "/cv/Ziad Elshihy - QC.pdf", // Add your CV to public/cv folder
 };
 
 export const skills = {

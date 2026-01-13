@@ -86,10 +86,17 @@ export function Hero() {
                 Download CV
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
+            {/* <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
               <Link to="/contact">
                 <Mail className="w-5 h-5 mr-2" />
                 Contact Me
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button> */}
+                        <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
+              <Link to="https://api.whatsapp.com/send/?phone=%2B201092477262&text&type=phone_number&app_absent=0" target="_blank">
+                <Mail className="w-5 h-5 mr-2" />
+                WhatsApp
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
