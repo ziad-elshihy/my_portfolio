@@ -3,9 +3,11 @@ export const siteConfig = {
   name: "Ziad Elshihy",
   title: "QA Tester / Software Tester",
   location: "Egypt",
+  whatsappNumber: "+201092477262",
+  whatsappLink: "https://api.whatsapp.com/send/?phone=%2B201092477262&text&type=phone_number&app_absent=0",
   email: "elshihyziad@gmail.com", // Update with real email
-  linkedin: "https://linkedin.com/in/ziadelshihy", // Update with real LinkedIn
-  github: "https://github.com/ziadelshihy", // Update with real GitHub
+  linkedin: "https://www.linkedin.com/in/ziad-elshihy/", // Update with real LinkedIn
+  github: "https://github.com/ziad-elshihy", // Update with real GitHub
   
   // Feature flags
   showProfileImage: false, // Set to true when you have a profile image

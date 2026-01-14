@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Mail, Terminal } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
+import { SocialIcon } from "@/components/ui/SocialIcon";
+import { ThemeToggle } from "../ui/ThemeToggle";
+
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -38,42 +41,82 @@ export function Footer() {
               <Link to="/contact" className="nav-link">
                 Contact
               </Link>
-              <Link to="/dashboard" className="nav-link text-xs opacity-50">
-                Admin
-              </Link>
             </div>
           </div>
 
           {/* Social */}
           <div className="space-y-4 sm:col-span-2 md:col-span-1">
             <h4 className="font-semibold text-foreground">Connect</h4>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <a
                 href={siteConfig.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors"
+                className="w-10 h-10 flex items-center justify-center"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary" />
+                <img src="/public/linkedin.png" alt="LinkedIn" className="w-8 h-8 " />
               </a>
               <a
                 href={siteConfig.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors"
+                className="w-10 h-10 flex items-center justify-center"
                 aria-label="GitHub"
               >
-                <Github className="w-5 h-5 text-muted-foreground hover:text-primary" />
+                <img src="/public/github.png" alt="GitHub" className="w-8 h-8 invert" />
               </a>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors"
+                target="_blank"
+                className="w-10 h-10 flex items-center justify-center"
                 aria-label="Email"
               >
-                <Mail className="w-5 h-5 text-muted-foreground hover:text-primary" />
+                <img src="/public/gmail.png" alt="Gmail" className="w-8 h-8 " />
               </a>
+              <a
+                href="https://api.whatsapp.com/send/?phone=%2B201092477262&text&type=phone_number&app_absent=0"
+                target="_blank"
+                className="w-10 h-10 flex items-center justify-center"
+                aria-label="Whatsapp"
+              >
+                <img src="/public/whatsapp.png" alt="WhatsApp" className="w-8 h-8 " />
+              </a>
+            </div> */}
+            <div className="flex gap-4">
+              <SocialIcon
+                href={siteConfig.linkedin}
+                label="LinkedIn"
+              >
+                <img src="/linkedin.png" alt="LinkedIn" className="w-8 h-8" />
+              </SocialIcon>
+
+
+              <SocialIcon
+                href={siteConfig.github}
+                label="GitHub"
+              >
+                <img src="/github.png" alt="" className="w-8 h-8 dark:invert" />
+              </SocialIcon>
+
+
+              <SocialIcon
+                href={`mailto:${siteConfig.email}`}
+                label="Email"
+              >
+                <img src="/gmail.png" alt="Gmail" className="w-8 h-8 bg-transparent" />
+              </SocialIcon>
+
+
+              <SocialIcon
+                href={siteConfig.whatsappLink}
+                label="WhatsApp"
+              >
+                <img src="/whatsapp.png" alt="WhatsApp" className="w-8 h-8" />
+              </SocialIcon>
+
             </div>
+
           </div>
         </div>
 
