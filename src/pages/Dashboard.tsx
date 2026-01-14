@@ -102,9 +102,6 @@ const Dashboard = () => {
             </Button>
           </form>
 
-          <p className="text-xs text-muted-foreground text-center mt-4">
-            Default password: admin123
-          </p>
         </div>
       </div>
     );

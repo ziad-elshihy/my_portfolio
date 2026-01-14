@@ -10,7 +10,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Simple password-based auth for admin dashboard
 // In production, replace with proper authentication
-const ADMIN_PASSWORD = "admin123"; // Change this!
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;; // Change this!
 const AUTH_KEY = "portfolio_auth";
 
 export function AuthProvider({ children }: { children: ReactNode }) {
