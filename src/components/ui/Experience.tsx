@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap, Calendar } from 'lucide-react';
 import { personalData } from '@/data/personalData';
-import ScrollReveal from '../components/ui/ScrollReveal';
-import { SectionHeader } from '@/components/ui/SectionHeader';
+import ScrollReveal from './ScrollReveal';
 
 interface TimelineItem {
   type: 'work' | 'education';
@@ -35,10 +34,10 @@ const Experience = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <SectionHeader
-              title="Experience & Education"
-              subtitle="Journey through my professional and academic milestones"
-            />
+            <div className="text-center mb-12">
+              <p className="text-primary font-mono text-sm mb-2">Journey</p>
+              <h2 className="section-heading">Experience & Education</h2>
+            </div>
           </ScrollReveal>
 
           {/* Timeline */}

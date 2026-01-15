@@ -1,8 +1,7 @@
 import { TestTube2, Wrench, Code, Bug, Smartphone, Database, GitBranch, FileJson, Workflow, Coffee } from 'lucide-react';
-import ScrollReveal from '../components/ui/ScrollReveal';
-import StaggeredList from '../components/ui/StaggeredList';
+import ScrollReveal from './ScrollReveal';
+import StaggeredList from './StaggeredList';
 import { personalData } from '@/data/personalData';
-import { SectionHeader } from '@/components/ui/SectionHeader';
 
 interface SkillCategory {
   title: string;
@@ -80,15 +79,18 @@ const Skills = () => {
   return (
     <section id="skills" className="py-24 md:py-32 relative">
       <div className="absolute inset-0 gradient-mesh opacity-30" />
-
+      
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <ScrollReveal>
-            <SectionHeader
-              title="Skills & Tools"
-              subtitle="A comprehensive toolkit for ensuring software quality"
-            />
+            <div className="text-center mb-16">
+              <p className="text-primary font-mono text-sm mb-2">Expertise</p>
+              <h2 className="section-heading">Skills & Tools</h2>
+              <p className="section-subheading mx-auto">
+                A comprehensive toolkit for ensuring software quality
+              </p>
+            </div>
           </ScrollReveal>
 
           {/* Skills Categories */}
@@ -97,7 +99,7 @@ const Skills = () => {
               const CategoryIcon = category.icon;
               return (
                 <ScrollReveal key={category.title} delay={categoryIndex * 0.1}>
-                  <div
+                  <div 
                     className="glass-card p-6 h-full"
                     style={{
                       '--glow-color': category.color,
@@ -105,11 +107,11 @@ const Skills = () => {
                   >
                     {/* Category Header */}
                     <div className="flex items-center gap-3 mb-6">
-                      <div
+                      <div 
                         className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center"
                         style={{ background: `${category.color}20` }}
                       >
-                        <CategoryIcon
+                        <CategoryIcon 
                           className="w-6 h-6"
                           style={{ color: category.color }}
                         />
@@ -122,7 +124,7 @@ const Skills = () => {
                       {category.skills.map((skill) => {
                         const SkillIcon = iconMap[skill] || Code;
                         return (
-                          <li
+                          <li 
                             key={skill}
                             className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
                           >

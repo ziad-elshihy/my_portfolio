@@ -85,12 +85,11 @@ const Contact = () => {
   };
 
   return (
-    <Layout>
-      <section className="py-12 md:py-20">
+    <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <SectionHeader
-              title="Get in Touch"
+              title="Let's Work Together!"
               subtitle="Open to freelance testing projects and junior QA roles"
             />
           </ScrollReveal>
@@ -228,7 +227,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </Layout>
   );
 };
 

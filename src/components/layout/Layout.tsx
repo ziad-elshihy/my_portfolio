@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { PageTransition } from "@/components/animations/PageTransition";
+import BackToTop from "../ui/BackToTop";
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,6 +16,7 @@ export function Layout({ children }: LayoutProps) {
         <PageTransition>{children}</PageTransition>
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

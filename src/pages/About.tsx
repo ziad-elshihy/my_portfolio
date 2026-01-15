@@ -1,126 +1,148 @@
-import { Layout } from "@/components/layout/Layout";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { siteConfig } from "@/config/siteConfig";
-import { CheckCircle, MapPin, Award, Target } from "lucide-react";
-import { ScrollReveal } from "@/components/animations/ScrollReveal";
-import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
+import { Bug, TestTube2, Smartphone, Database } from 'lucide-react';
+import { personalData } from '@/data/personalData';
+import ScrollReveal from '../components/ui/ScrollReveal';
+import StaggeredList from '../components/ui/StaggeredList';
+import { Layout } from '@/components/layout/Layout';
+import { SectionHeader } from '@/components/ui/SectionHeader';
+
+const skills = [
+  { icon: TestTube2, title: 'Manual Testing', description: 'Functional, Regression, Smoke, Sanity, Usability, Design Testing', color: 'hsl(172, 66%, 50%)' },
+  { icon: Bug, title: 'Bug Tracking', description: 'Expert in Jira for bug reporting, tracking, and verification', color: 'hsl(270, 70%, 60%)' },
+  { icon: Smartphone, title: 'Mobile Testing', description: 'Cross-platform testing for Android and iOS applications', color: 'hsl(330, 80%, 60%)' },
+  { icon: Database, title: 'API & Database', description: 'Postman for API testing, SQL for database validation', color: 'hsl(45, 100%, 60%)' },
+];
 
 const About = () => {
   return (
-    <Layout>
-      <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4">
+    <section id="about" className="py-24 md:py-32 relative">
+      <div className="absolute inset-0 gradient-mesh opacity-50" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+
           <ScrollReveal>
             <SectionHeader
-              title="About Me"
-              subtitle="A passionate QA engineer dedicated to delivering quality software"
+              title="Quality Assurance Expert"
+              subtitle="ISTQB CTFL-certified Software Tester dedicated to ensuring 
+                high-quality user experiences across all platforms."
             />
           </ScrollReveal>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
-              {/* Profile section - shows image if enabled */}
-              {siteConfig.showProfileImage ? (
-                <ScrollReveal direction="left" className="md:col-span-1">
-                  <img
-                    src={siteConfig.profileImageSrc}
-                    alt={siteConfig.name}
-                    className="w-full aspect-square rounded-2xl object-cover border-4 border-primary/20"
-                  />
-                </ScrollReveal>
-              ) : null}
-
-              {/* Bio */}
-              <ScrollReveal
-                direction="right"
-                delay={0.1}
-                className={siteConfig.showProfileImage ? "md:col-span-2" : "md:col-span-3"}
-              >
-                <div className="glass-card p-6 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-semibold mb-4 flex items-center gap-2">
-                    <span className="gradient-text">Hello!</span>
-                  </h3>
-
-                  <div className="space-y-4 text-muted-foreground text-sm md:text-base">
-                    <p>
-                      I'm <strong className="text-foreground">{siteConfig.name}</strong>, 
-                      a Junior QA/QC Engineer based in {siteConfig.location}. While I'm at 
-                      the beginning of my career, I've gained valuable hands-on experience 
-                      working on real-world projects.
-                    </p>
-
-                    <p>
-                      I hold the <strong className="text-foreground">ISTQB CTFL certification</strong> and 
-                      have practical experience in manual testing, API testing with Postman, 
-                      and basic test automation using Selenium and TestNG.
-                    </p>
-
-                    <p>
-                      My approach combines methodical testing practices with genuine curiosity 
-                      about how software works. I believe quality is not just about finding bugs—it's 
-                      about understanding the user experience and ensuring the product meets expectations.
-                    </p>
-
-                    <p>
-                      I'm actively seeking opportunities to grow as a QA professional, whether 
-                      through freelance testing projects or a junior QA position where I can 
-                      contribute to a team while continuing to learn.
-                    </p>
+          {/* Content Grid */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Text Content */}
+            <ScrollReveal delay={0.1}>
+              <div className="space-y-6">
+                <p className="text-muted-foreground leading-relaxed">
+                  {personalData.summary}
+                </p>
+                
+                {/* Experience */}
+                {personalData.experience.map((exp, index) => (
+                  <div key={index} className="glass-card p-4">
+                    <div className="flex items-start justify-between mb-2">
+                      <div>
+                        <h4 className="font-semibold">{exp.company}</h4>
+                        <p className="text-sm text-primary">{exp.role}</p>
+                      </div>
+                      <span className="text-xs text-muted-foreground">{exp.period}</span>
+                    </div>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {exp.highlights.slice(0, 3).map((highlight, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-primary mt-1">•</span>
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-
-                  <div className="flex items-center gap-2 mt-6 text-sm text-muted-foreground">
-                    <MapPin className="w-4 h-4 text-primary" />
-                    {siteConfig.location}
+                ))}
+                
+                {/* Tech Stack */}
+                <div className="pt-4">
+                  <p className="text-sm font-mono text-primary mb-3">Skills & Tools:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {personalData.skills.slice(0, 8).map((skill) => (
+                      <span 
+                        key={skill}
+                        className="px-3 py-1 text-sm bg-secondary rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-colors"
+                      >
+                        {skill.includes('(') ? skill.split('(')[0].trim() : skill}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              </ScrollReveal>
-            </div>
+              </div>
+            </ScrollReveal>
 
-            {/* Values/Approach */}
-            <StaggerContainer className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-              <StaggerItem>
-                <div className="glass-card p-5 md:p-6 hover:border-primary/50 transition-colors h-full">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
-                    <Target className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+            {/* Image/Visual */}
+            <ScrollReveal delay={0.2} direction="right">
+              <div className="relative">
+                <div className="aspect-square rounded-2xl overflow-hidden glass-card p-1">
+                  <div className="w-full h-full rounded-xl bg-gradient-to-br from-primary/20 via-neon-purple/10 to-neon-pink/20 flex items-center justify-center">
+                    <div className="text-center p-8">
+                      <div className="w-32 h-32 mx-auto mb-6 rounded-full flex items-center justify-center overflow-hidden border-2 border-primary">
+                        <img src="/public/WhatsApp Image 2025-12-13 at 6.35.41 PM.jpeg" alt="" />
+                      </div>
+                      <h3 className="font-semibold mb-2">{personalData.name.split(' ')[0]}</h3>
+                      <p className="text-muted-foreground text-sm mb-4">
+                        {personalData.location}
+                      </p>
+                      
+                      {/* Certificates */}
+                      <div className="space-y-2">
+                        {personalData.certificates.slice(0, 2).map((cert, i) => (
+                          <span 
+                            key={i}
+                            className="block text-xs px-3 py-1 bg-primary/10 text-primary rounded-full"
+                          >
+                            {cert}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                  <h4 className="font-semibold mb-2">Detail-Oriented</h4>
-                  <p className="text-sm text-muted-foreground">
-                    I approach testing with meticulous attention to detail, ensuring 
-                    comprehensive coverage and thorough documentation.
-                  </p>
                 </div>
-              </StaggerItem>
-
-              <StaggerItem>
-                <div className="glass-card p-5 md:p-6 hover:border-primary/50 transition-colors h-full">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
-                    <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-                  </div>
-                  <h4 className="font-semibold mb-2">Growth Mindset</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Continuously learning new tools, methodologies, and best practices 
-                    to become a more effective QA professional.
-                  </p>
-                </div>
-              </StaggerItem>
-
-              <StaggerItem>
-                <div className="glass-card p-5 md:p-6 hover:border-primary/50 transition-colors h-full sm:col-span-2 md:col-span-1">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
-                    <Award className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-                  </div>
-                  <h4 className="font-semibold mb-2">Quality First</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Committed to delivering high-quality results that meet user expectations 
-                    and business requirements.
-                  </p>
-                </div>
-              </StaggerItem>
-            </StaggerContainer>
+                
+                {/* Decorative Elements */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-neon-purple/20 rounded-full blur-2xl" />
+              </div>
+            </ScrollReveal>
           </div>
+
+          {/* Skills Grid */}
+          <StaggeredList className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {skills.map((skill) => {
+              const Icon = skill.icon;
+              return (
+                <div
+                  key={skill.title}
+                  className="glass-card p-6 group hover:scale-105 transition-all duration-300"
+                  style={{
+                    '--glow-color': skill.color,
+                  } as React.CSSProperties}
+                >
+                  <div 
+                    className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4 
+                      group-hover:bg-primary/10 transition-colors"
+                  >
+                    <Icon 
+                      className="w-6 h-6 text-foreground/70 group-hover:text-foreground transition-all duration-300
+                        group-hover:drop-shadow-[0_0_8px_var(--glow-color)]"
+                    />
+                  </div>
+                  <h3 className="font-semibold mb-2">{skill.title}</h3>
+                  <p className="text-sm text-muted-foreground">{skill.description}</p>
+                </div>
+              );
+            })}
+          </StaggeredList>
         </div>
-      </section>
-    </Layout>
+      </div>
+    </section>
+
+    // </Layout>
   );
 };
 

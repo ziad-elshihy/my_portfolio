@@ -8,7 +8,6 @@ import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { AnimatePresence } from "framer-motion";
 import Index from "./pages/Index";
-import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
@@ -17,6 +16,7 @@ import Certifications from "./pages/Certifications";
 import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -27,9 +27,9 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Index />} />
-        <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/experience" element={<Experience />} />
         <Route path="/certifications" element={<Certifications />} />
