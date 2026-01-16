@@ -1,30 +1,30 @@
 import { Link } from "react-router-dom";
-import { Github, Linkedin, Mail, Terminal } from "lucide-react";
+import { Terminal } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
 import { SocialIcon } from "@/components/ui/SocialIcon";
-import { ThemeToggle } from "../ui/ThemeToggle";
-
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-card/50">
-      <div className="container mx-auto px-4 py-8 md:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <footer className="border-t border-border bg-card/40">
+      <div className="container mx-auto px-4 pt-5 pb-2 md:pb-2 md:pt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+            <Link to="/" className="flex items-center gap-2 group">
+              <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 transition-colors duration-fast ease-smooth">
                 <Terminal className="w-4 h-4 text-primary" />
               </div>
               <span className="font-semibold text-foreground">
                 {siteConfig.name}
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm max-w-xs">
-              {siteConfig.title} based in {siteConfig.location}. Open to
-              freelance projects and junior QA roles.
+
+            <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
+              {siteConfig.title} based in {siteConfig.location}. Open to freelance
+              projects and junior QA roles.
             </p>
           </div>
 
@@ -32,13 +32,22 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Quick Links</h4>
             <div className="flex flex-col gap-2">
-              <Link to="/projects" className="nav-link">
+              <Link
+                to="/projects"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
                 Projects
               </Link>
-              <Link to="/about" className="nav-link">
+              <Link
+                to="/about"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
                 About Me
               </Link>
-              <Link to="/contact" className="nav-link">
+              <Link
+                to="/contact"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
                 Contact
               </Link>
             </div>
@@ -47,84 +56,37 @@ export function Footer() {
           {/* Social */}
           <div className="space-y-4 sm:col-span-2 md:col-span-1">
             <h4 className="font-semibold text-foreground">Connect</h4>
-            {/* <div className="flex gap-4">
-              <a
-                href={siteConfig.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center"
-                aria-label="LinkedIn"
-              >
-                <img src="/public/linkedin.png" alt="LinkedIn" className="w-8 h-8 " />
-              </a>
-              <a
-                href={siteConfig.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center"
-                aria-label="GitHub"
-              >
-                <img src="/public/github.png" alt="GitHub" className="w-8 h-8 invert" />
-              </a>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                target="_blank"
-                className="w-10 h-10 flex items-center justify-center"
-                aria-label="Email"
-              >
-                <img src="/public/gmail.png" alt="Gmail" className="w-8 h-8 " />
-              </a>
-              <a
-                href="https://api.whatsapp.com/send/?phone=%2B201092477262&text&type=phone_number&app_absent=0"
-                target="_blank"
-                className="w-10 h-10 flex items-center justify-center"
-                aria-label="Whatsapp"
-              >
-                <img src="/public/whatsapp.png" alt="WhatsApp" className="w-8 h-8 " />
-              </a>
-            </div> */}
+
             <div className="flex gap-4">
-              <SocialIcon
-                href={siteConfig.linkedin}
-                label="LinkedIn"
-              >
-                <img src="/linkedin.png" alt="LinkedIn" className="w-8 h-8" />
+              <SocialIcon href={siteConfig.linkedin} label="LinkedIn">
+                <img src="/linkedin.png" alt="LinkedIn" className="w-7 h-7" />
               </SocialIcon>
 
-
-              <SocialIcon
-                href={siteConfig.github}
-                label="GitHub"
-              >
-                <img src="/github.png" alt="" className="w-8 h-8 dark:invert" />
+              <SocialIcon href={siteConfig.github} label="GitHub">
+                <img
+                  src="/github.png"
+                  alt="GitHub"
+                  className="w-7 h-7 dark:invert"
+                />
               </SocialIcon>
 
-
-              <SocialIcon
-                href={`mailto:${siteConfig.email}`}
-                label="Email"
-              >
-                <img src="/gmail.png" alt="Gmail" className="w-8 h-8 bg-transparent" />
+              <SocialIcon href={`mailto:${siteConfig.email}`} label="Email">
+                <img src="/gmail.png" alt="Gmail" className="w-7 h-7" />
               </SocialIcon>
 
-
-              <SocialIcon
-                href={siteConfig.whatsappLink}
-                label="WhatsApp"
-              >
-                <img src="/whatsapp.png" alt="WhatsApp" className="w-8 h-8" />
+              <SocialIcon href={siteConfig.whatsappLink} label="WhatsApp">
+                <img src="/whatsapp.png" alt="WhatsApp" className="w-7 h-7" />
               </SocialIcon>
-
             </div>
-
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-          <p className="text-sm text-muted-foreground">
+        {/* Bottom */}
+        <div className="border-t border-border/60 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
+          <p className="text-xs text-muted-foreground">
             © {currentYear} {siteConfig.name}. All rights reserved.
           </p>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs text-muted-foreground italic">
             Quality is never an accident. It is always the result of intelligent
             effort.
           </p>

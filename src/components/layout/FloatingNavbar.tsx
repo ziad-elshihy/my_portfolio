@@ -1,20 +1,24 @@
 import { NavLink, useLocation } from "react-router-dom";
 import {
    Home,
-   Folder,
+   FolderDot,
    User,
    Mail,
-   LayoutDashboard,
+   Wrench,
+   BookOpen,
+   ShieldCheck,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const navItems = [
    { icon: Home, label: "Home", to: "/" },
-   { icon: Folder, label: "Projects", to: "/projects" },
+   { icon: FolderDot, label: "Projects", to: "/projects" },
    { icon: User, label: "About", to: "/about" },
+   { icon: Wrench, label: "Skills", to: "/skills" },
+   { icon: BookOpen, label: "Experience", to: "/experience" },
+   { icon: ShieldCheck, label: "Certifications", to: "/certifications" },
    { icon: Mail, label: "Contact", to: "/contact" },
-   { icon: LayoutDashboard, label: "Dashboard", to: "/dashboard" },
 ];
 
 export default function FloatingNavbar() {
@@ -36,19 +40,21 @@ export default function FloatingNavbar() {
       <AnimatePresence>
          {visible && (
             <motion.nav
-               initial={{ opacity: 0, y: -20 }}
+               initial={{ opacity: 0, y: -16 }}
                animate={{ opacity: 1, y: 0 }}
-               exit={{ opacity: 0, y: -20 }}
-               transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-               className=" "
+               exit={{ opacity: 0, y: -16 }}
+               transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
             >
                <div
                   className="
-              flex items-center gap-6
-              px-3 py-2
-              rounded-full
+              flex items-center gap-5
+              px-5 py-2
+              rounded-md
               backdrop-blur-md
-            shadow-xl"
+              bg-card/70
+              border border-border
+              shadow-lg
+            "
                >
                   {navItems.map((item) => {
                      const Icon = item.icon;
@@ -57,34 +63,29 @@ export default function FloatingNavbar() {
                         location.pathname.startsWith(item.to);
 
                      return (
-                        <NavLink
-                           key={item.label}
-                           to={item.to}
-                           className="group relative"
-                        >
-                           <motion.div
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{ scale: 0.95 }}
+                        <NavLink key={item.label} to={item.to} className="group relative">
+                           <div
                               className={`
                       p-2 rounded-full
                       transition-all duration-normal ease-smooth
                       ${isActive
                                     ? "bg-primary/20 text-primary"
-                                    : "text-muted-foreground hover:text-primary hover:bg-white/10"
+                                    : "text-muted-foreground hover:text-primary hover:bg-primary/10"
                                  }
                     `}
                            >
                               <Icon className="w-5 h-5" />
-                           </motion.div>
+                           </div>
 
                            {/* Tooltip */}
                            <span
                               className="
                       pointer-events-none
-                      absolute -bottom-9 left-1/2 -translate-x-1/2
+                      absolute -bottom-8 left-1/2 -translate-x-1/2
                       scale-0 group-hover:scale-100
-                      rounded-md bg-black px-2 py-1
-                      text-xs text-white
+                      rounded-md bg-card px-2 py-1
+                      text-xs text-muted-foreground
+                      border border-border
                       transition-transform duration-fast
                     "
                            >

@@ -18,6 +18,7 @@ import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 import MainLayout from "./layout/MainLayout";
+import LoadingScreen from "./components/ui/LoadingScreen";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ function AnimatedRoutes() {
 
   return (
     <AnimatePresence mode="wait">
+      <LoadingScreen />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<MainLayout><Index /></MainLayout>} />
         <Route path="/skills" element={<MainLayout><Skills /></MainLayout>} />

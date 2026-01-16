@@ -1,73 +1,86 @@
-# Welcome to your Lovable project
+# 🧪 Ziad Elshihy – Software QA Engineer Portfolio
 
-## Project info
+A modern, fully responsive personal portfolio showcasing my experience as a **Software Quality Assurance Engineer**, built with **React, TypeScript, and Tailwind CSS**.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This portfolio highlights my skills, projects, testing experience, and certifications with a clean UI and scalable architecture.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Live Demo
+👉 https://your-vercel-link.vercel.app
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🛠 Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend:** React + TypeScript  
+- **Styling:** Tailwind CSS (Utility-first, default spacing system)  
+- **UI Components:** shadcn/ui  
+- **Routing:** React Router v6  
+- **Build Tool:** Vite  
+- **Linting:** ESLint  
+- **Deployment:** Vercel  
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## ✨ Key Features
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- ✅ Fully responsive (Mobile, Tablet, Desktop)
+- ✅ Clean and consistent spacing system
+- ✅ Fixed floating navigation bar across all pages
+- ✅ Modular and scalable component structure
+- ✅ Dedicated pages for each section
+- ✅ QA-focused project presentation
+- ✅ Project Details pages with responsive card layouts
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📄 Pages & Routes
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+| Page | Route |
+|----|----|
+| Home | `/` |
+| About | `/about` |
+| Skills | `/skills` |
+| Projects | `/projects` |
+| Project Details | `/projects/:id` |
+| Experience | `/experience` |
+| Certifications | `/certifications` |
+| Contact | `/contact` |
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 📱 Responsive Design Strategy
 
-**Edit a file directly in GitHub**
+- **Mobile-first approach**
+- Tailwind default breakpoints:
+  - `base` → Mobile
+  - `md` → Tablet / Small Desktop
+  - `lg` → Desktop
+- Project cards:
+  - Mobile → 1 column
+  - Desktop → 2–3 columns (depending on page)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 🧩 Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```txt
+src/
+├─ components/
+│  ├─ layout/
+│  │  ├─ Container.tsx
+│  │  └─ FloatingNav.tsx
+│  └─ ui/
+├─ pages/
+│  ├─ Home.tsx
+│  ├─ About.tsx
+│  ├─ Skills.tsx
+│  ├─ Projects.tsx
+│  ├─ ProjectDetails.tsx
+│  ├─ Experience.tsx
+│  ├─ Certifications.tsx
+│  └─ Contact.tsx
+├─ router/
+│  └─ AppRouter.tsx
+└─ main.tsx

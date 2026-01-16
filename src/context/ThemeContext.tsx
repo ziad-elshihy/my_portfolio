@@ -9,10 +9,25 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+// 🔹 Detect system preference
+function getSystemTheme(): Theme {
+  if (typeof window === "undefined") return "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    const stored = localStorage.getItem("theme");
-    return (stored as Theme) || "dark";
+    const stored = localStorage.getItem("theme") as Theme | null;
+
+    // 1️⃣ user choice
+    if (stored === "dark" || stored === "light") {
+      return stored;
+    }
+
+    // 2️⃣ system preference
+    return getSystemTheme();
   });
 
   useEffect(() => {
@@ -23,7 +38,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   return (

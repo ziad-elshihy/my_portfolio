@@ -19,28 +19,32 @@ export function ThemeToggle() {
         active:scale-95
       "
     >
-      {/* Hover glow */}
+      {/* Glow */}
       <span
-        className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        className="
+          absolute inset-0 rounded-full
+          opacity-0 group-hover:opacity-100
+          transition-opacity duration-300
+        "
         style={{
           boxShadow: isDark
-            ? "0 0 16px hsl(60,100%,50%)"
-            : "0 0 16px hsl(210,90%,50%)",
+            ? "0 0 14px hsl(50 100% 60% / 0.7)" // dark → soft yellow
+            : "0 0 14px hsl(210 90% 55% / 0.7)", // light → blue
         }}
       />
 
-      {/* Icon wrapper */}
+      {/* Icon */}
       <span
         className="
           relative z-10
-          transition-all duration-300 ease-smooth
+          transition-transform duration-300 ease-smooth
           group-hover:rotate-12
         "
       >
         {isDark ? (
-          <Sun className="w-5 h-5 text-[hsl(55,100%,50%)]" />
+          <Sun className="w-5 h-5 text-[hsl(50,100%,60%)]" />
         ) : (
-          <Moon className="w-5 h-5 text-[hsl(210,90%,50%)]" />
+          <Moon className="w-5 h-5 text-primary" />
         )}
       </span>
     </button>

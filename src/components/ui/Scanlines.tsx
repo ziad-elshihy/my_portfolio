@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const Scanlines = () => {
+const ScanLines = () => {
   return (
     <>
       {/* Static scanlines overlay */}
@@ -38,4 +38,4 @@ const Scanlines = () => {
   );
 };
 
-export default Scanlines;
+export default ScanLines;

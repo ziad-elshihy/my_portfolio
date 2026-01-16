@@ -97,7 +97,7 @@ const Skills = () => {
               return (
                 <ScrollReveal key={category.title} delay={categoryIndex * 0.1}>
                   <div
-                    className="glass-card p-6 h-full group hover:scale-105 transition-all duration-300
+                    className="glass-card p-6 h-full group transition-all duration-300
                     text-foreground/70 group-hover:text-foreground 
                         group-hover:drop-shadow-[0_0_8px_var(--glow-color)]
                     "

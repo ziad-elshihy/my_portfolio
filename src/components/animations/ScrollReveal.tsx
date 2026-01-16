@@ -3,37 +3,25 @@ import { ReactNode, useRef } from "react";
 
 interface ScrollRevealProps {
   children: ReactNode;
-  className?: string;
   delay?: number;
-  direction?: "up" | "down" | "left" | "right";
+  className?: string;
 }
 
 export function ScrollReveal({
   children,
-  className = "",
   delay = 0,
-  direction = "up",
+  className = "",
 }: ScrollRevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  const directions = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { y: 0, x: 40 },
-    right: { y: 0, x: -40 },
-  };
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <motion.div
       ref={ref}
-      initial={{
-        opacity: 0,
-        ...directions[direction],
-      }}
-      animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
+      initial={{ opacity: 0, y: 16 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{
-        duration: 0.5,
+        duration: 0.45,
         delay,
         ease: [0.4, 0, 0.2, 1],
       }}

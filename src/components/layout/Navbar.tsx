@@ -19,25 +19,19 @@ export function Navbar() {
   const location = useLocation();
 
   return (
-<nav
-  className="
-    fixed top-0 left-0 right-0 z-50
-
-    max-md:bg-card/50
-    max-md:backdrop-blur-md
-    max-md:border-b
-    max-md:border-border
-
-    md:bg-transparent
-    md:backdrop-blur-0
-    md:border-none
-  "
->
-      <div className="container mx-auto px-4 ">
+    <nav
+      className="
+        fixed top-0 left-0 right-0 z-50
+        max-md:bg-card/60 max-md:backdrop-blur-md
+        max-md:border-b max-md:border-border
+        md:bg-transparent md:border-none
+      "
+    >
+      <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-fast ease-smooth">
+            <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 transition-colors duration-fast ease-smooth">
               <Terminal className="w-4 h-4 text-primary" />
             </div>
             <span className="font-semibold text-foreground">
@@ -46,28 +40,17 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop */}
           <div className="hidden md:flex items-center gap-6 pt-8">
-            {/* {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`nav-link ${
-                  location.pathname === link.href ? "nav-link-active" : ""
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))} */}
             <FloatingNavbar />
           </div>
 
-          {/* Theme Toggle */}
+          {/* Theme */}
           <div className="hidden md:flex items-center">
             <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Toggle */}
           <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
             <button
@@ -80,7 +63,7 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -96,8 +79,11 @@ export function Navbar() {
                     <Link
                       key={link.href}
                       to={link.href}
-                      className={`nav-link py-2 ${location.pathname === link.href ? "nav-link-active" : ""
-                        }`}
+                      className={`px-2 py-2 text-sm transition-colors ${
+                        location.pathname === link.href
+                          ? "text-primary"
+                          : "text-muted-foreground hover:text-primary"
+                      }`}
                       onClick={() => setIsOpen(false)}
                     >
                       {link.label}
@@ -110,6 +96,5 @@ export function Navbar() {
         </AnimatePresence>
       </div>
     </nav>
-
   );
 }

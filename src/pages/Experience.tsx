@@ -69,7 +69,7 @@ const Experience = () => {
                     <div className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${
                       isLeft ? 'md:pr-8' : 'md:pl-8'
                     }`}>
-                      <div className="glass-card p-5 hover:scale-105 transition-all duration-normal ease-smooth">
+                      <div className="glass-card p-5  transition-all duration-normal ease-smooth">
                         <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
                           <Calendar className="w-3 h-3" />
                           {item.period}
