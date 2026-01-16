@@ -13,7 +13,7 @@ const skills = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 md:py-32 relative">
+    <section id="about" className="py-12 md:py-32 lg:24 relative">
       <div className="absolute inset-0 gradient-mesh opacity-40" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -82,14 +82,14 @@ export default function About() {
                 <div className="aspect-square rounded-2xl glass-card p-1">
                   <div className="w-full h-full rounded-xl bg-primary/5 flex items-center justify-center">
                     <div className="text-center p-8">
-                      <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-primary/30">
-                        <img src="/personal_img.jpeg" alt="" />
+                      <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-primary/70">
+                        <img src="/personal.png" alt="" />
                       </div>
                       <h3 className="font-semibold mb-1">
-                        {personalData.name.split(" ")[0]}
+                        {personalData.name}
                       </h3>
                       <p className="text-sm text-muted-foreground">
-                        {personalData.location}
+                        {personalData.country}
                       </p>
                     </div>
                   </div>

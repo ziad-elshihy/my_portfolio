@@ -31,7 +31,7 @@ const timelineItems: TimelineItem[] = [
 
 const Experience = () => {
   return (
-    <section className="py-16 md:py-24 relative">
+    <section className="py-12 md:py-32 lg:24 relative">
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>

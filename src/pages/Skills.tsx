@@ -77,7 +77,7 @@ const iconMap: { [key: string]: React.ElementType } = {
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 md:py-32 relative">
+    <section id="skills" className="py-12 md:py-32 lg:24 relative">
       <div className="absolute inset-0 gradient-mesh opacity-30 " />
 
       <div className="container mx-auto px-6 relative z-10">

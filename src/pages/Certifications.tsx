@@ -6,7 +6,7 @@ import { Award, Calendar } from "lucide-react";
 const Certifications = () => {
   return (
     <Layout>
-      <section className="py-20">
+      <section className="py-12 md:py-32 lg:24 relative">
         <div className="container mx-auto px-4">
           <SectionHeader
             title="Certifications"

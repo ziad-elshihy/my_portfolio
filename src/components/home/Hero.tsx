@@ -27,13 +27,15 @@ const heroItem: Variants = {
 
 export function Hero() {
   return (
-    <section className="hero-gradient min-h-screen flex items-center relative overflow-hidden">
+    <section className="hero-gradient
+  min-h-screen
+  flex
+  items-start md:items-center
+  pt-24 md:pt-0
+  relative
+  overflow-hidden">
       {/* Floating dots */}
-      <motion.div
-        className="absolute top-[30%] left-[32.9%] w-3 h-3 rounded-full bg-primary/60"
-        animate={{ y: [0, -18, 0], opacity: [0.4, 0.8, 0.4] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      />
+
 
       {/* Background blobs */}
       <div className="absolute inset-0 overflow-hidden">
@@ -41,27 +43,23 @@ export function Hero() {
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 pt-24 md:pt-36 relative z-10">
+      <div className="container lg:pt-16 mx-auto px-4 md:px-8 relative z-10">
         <motion.div
           variants={heroContainer}
           initial="hidden"
           animate="visible"
           className="max-w-4xl mx-auto text-center"
         >
-          {/* Badge */}
-          <motion.div
-            variants={heroItem}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
-          >
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-xs md:text-sm text-primary font-medium">
-              Available for Freelance & Full-time Roles
-            </span>
-          </motion.div>
+
 
           {/* Image */}
           {siteConfig.showProfileImage && (
-            <motion.div variants={heroItem} className="mb-8">
+            <motion.div variants={heroItem} className="
+            text-3xl sm:text-4xl
+            md:text-6xl lg:text-7xl
+            font-bold
+            mb-4 md:mb-4
+            tracking-tight">
               <img
                 src={siteConfig.profileImageSrc}
                 alt={siteConfig.name}

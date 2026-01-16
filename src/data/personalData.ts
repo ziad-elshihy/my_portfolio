@@ -1,6 +1,7 @@
 export const personalData = {
    name: "ZIAD AMR ELSHIHY",
    title: "Software Quality Control / QA Engineer",
+   country: "Egypt",
    location: "Cairo, Egypt",
    email: "elshihyziad@gmail.com",
    phone: "+201000000000", // Update with actual phone

@@ -23,7 +23,7 @@ const ProjectDetail = () => {
 
   return (
     <Layout>
-      <section className="relative py-24 md:py-32">
+      <section className="py-12 md:py-32 lg:24 relative">
         {/* Background context */}
         <div className="absolute inset-0 gradient-mesh opacity-30" />
 

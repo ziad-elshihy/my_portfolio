@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { siteConfig } from "@/config/siteConfig";
 import { Mail, Linkedin, Github, Send, CheckCircle, Loader2 } from "lucide-react";
-import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import  ScrollReveal  from "@/components/ui/ScrollReveal";
 import { z } from "zod";
 import emailjs from "@emailjs/browser";
 
@@ -85,7 +85,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-12 md:py-20">
+    <section className="py-12 md:py-32 lg:24 relative">
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <SectionHeader
@@ -111,7 +111,7 @@ const Contact = () => {
 
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="glass-card p-4 flex items-center gap-4 hover:border-primary/50 transition-colors"
+                  className="glass-card p-4 flex items-center gap-4 hover:border-primary/50"
                 >
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
                     <Mail className="w-5 h-5 text-primary" />
@@ -126,7 +126,7 @@ const Contact = () => {
                   href={siteConfig.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass-card p-4 flex items-center gap-4 hover:border-primary/50 transition-colors"
+                  className="glass-card p-4 flex items-center gap-4 hover:border-primary/50"
                 >
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
                     <Linkedin className="w-5 h-5 text-primary" />
@@ -141,7 +141,7 @@ const Contact = () => {
                   href={siteConfig.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass-card p-4 flex items-center gap-4 hover:border-primary/50 transition-colors"
+                  className="glass-card p-4 flex items-center gap-4 hover:border-primary/50"
                 >
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
                     <Github className="w-5 h-5 text-primary" />
@@ -156,7 +156,7 @@ const Contact = () => {
 
             {/* Form */}
             <ScrollReveal direction="right">
-              <div className="glass-card p-6 md:p-8 group hover:border-primary/50 transition-all duration-normal ease-smooth">
+              <div className="glass-card p-6 md:p-8 group hover:border-primary/50">
                 <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
 
                 <form onSubmit={handleSubmit} className="space-y-5 ">
