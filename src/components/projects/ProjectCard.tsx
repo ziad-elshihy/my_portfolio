@@ -19,7 +19,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link
       to={`/projects/${project.id}`}
-      className="glass-card p-6 group hover:border-primary/50 transition-all duration-300 flex flex-col h-full"
+      className={`glass-card p-6 group hover:scale-105 transition-all duration-normal ease-smooth flex flex-col h-full`}
     >
       {/* Header with badges */}
       <div className="flex items-start justify-between mb-4">
@@ -42,7 +42,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       {/* Title */}
-      <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+      <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors duration-fast">
         {project.title}
       </h3>
 
@@ -86,7 +86,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       {/* Action - pinned to bottom */}
-      <div className="flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all mt-auto pt-2 border-t border-border/50">
+      <div className="flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all duration-normal ease-smooth mt-auto pt-2 border-t border-border/50">
         View Details
         <ArrowRight className="w-4 h-4" />
       </div>

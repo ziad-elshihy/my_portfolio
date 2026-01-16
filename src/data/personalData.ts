@@ -69,3 +69,11 @@ export const personalData = {
       twitter: "https://twitter.com/ziadelshihy",
    },
 };
+
+export const personalInfo = {
+   stats: {
+      testCases: '800+',
+      bugsReported: '120+',
+      platforms: 'Web, Mobile, API'
+   },
+};

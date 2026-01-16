@@ -156,10 +156,10 @@ const Contact = () => {
 
             {/* Form */}
             <ScrollReveal direction="right">
-              <div className="glass-card p-6 md:p-8">
+              <div className="glass-card p-6 md:p-8 group hover:border-primary/50 transition-all duration-normal ease-smooth">
                 <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
 
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-5 ">
                   <div>
                     <Label htmlFor="name">Name</Label>
                     <Input

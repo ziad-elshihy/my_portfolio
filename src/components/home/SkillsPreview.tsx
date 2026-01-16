@@ -42,8 +42,8 @@ export function SkillsPreview() {
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12">
           {skillCategories.map((category) => (
             <StaggerItem key={category.title}>
-              <div className="glass-card p-5 md:p-6 hover:border-primary/50 transition-all duration-300 h-full">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
+              <div className="glass-card p-5 md:p-6 hover:border-primary/50 transition-all duration-normal ease-smooth h-full">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 transition-all duration-fast ease-smooth">
                   <category.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                 </div>
                 <h3 className="text-base md:text-lg font-semibold mb-3">{category.title}</h3>

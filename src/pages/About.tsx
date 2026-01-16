@@ -2,7 +2,6 @@ import { Bug, TestTube2, Smartphone, Database } from 'lucide-react';
 import { personalData } from '@/data/personalData';
 import ScrollReveal from '../components/ui/ScrollReveal';
 import StaggeredList from '../components/ui/StaggeredList';
-import { Layout } from '@/components/layout/Layout';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 
 const skills = [
@@ -82,7 +81,7 @@ const About = () => {
                   <div className="w-full h-full rounded-xl bg-gradient-to-br from-primary/20 via-neon-purple/10 to-neon-pink/20 flex items-center justify-center">
                     <div className="text-center p-8">
                       <div className="w-32 h-32 mx-auto mb-6 rounded-full flex items-center justify-center overflow-hidden border-2 border-primary">
-                        <img src="/public/WhatsApp Image 2025-12-13 at 6.35.41 PM.jpeg" alt="" />
+                        <img src="/personal_img.jpeg" alt="" />
                       </div>
                       <h3 className="font-semibold mb-2">{personalData.name.split(' ')[0]}</h3>
                       <p className="text-muted-foreground text-sm mb-4">
@@ -142,7 +141,6 @@ const About = () => {
       </div>
     </section>
 
-    // </Layout>
   );
 };
 

@@ -39,7 +39,7 @@ export default function FloatingNavbar() {
                initial={{ opacity: 0, y: -20 }}
                animate={{ opacity: 1, y: 0 }}
                exit={{ opacity: 0, y: -20 }}
-               transition={{ duration: 0.3 }}
+               transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
                className=" "
             >
                <div
@@ -67,7 +67,7 @@ export default function FloatingNavbar() {
                               whileTap={{ scale: 0.95 }}
                               className={`
                       p-2 rounded-full
-                      transition-colors
+                      transition-all duration-normal ease-smooth
                       ${isActive
                                     ? "bg-primary/20 text-primary"
                                     : "text-muted-foreground hover:text-primary hover:bg-white/10"
@@ -85,7 +85,7 @@ export default function FloatingNavbar() {
                       scale-0 group-hover:scale-100
                       rounded-md bg-black px-2 py-1
                       text-xs text-white
-                      transition-transform
+                      transition-transform duration-fast
                     "
                            >
                               {item.label}

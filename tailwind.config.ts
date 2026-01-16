@@ -18,12 +18,23 @@ export default {
       },
     },
     extend: {
+      transitionTimingFunction: {
+        smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
+      },
+      transitionDuration: {
+        fast: "200ms",
+        normal: "300ms",
+        slow: "500ms",
+      },
+
+      /* ✅ ADDED NEON COLORS */
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -62,16 +73,25 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+
+        /* 🔥 Neon Severity Colors */
+        "neon-red": "hsl(0, 70%, 50%)",
+        "neon-orange": "hsl(30, 80%, 50%)",
+        "neon-yellow": "hsl(50, 85%, 50%)",
+        "neon-green": "hsl(140, 60%, 50%)",
       },
+
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
+
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -90,6 +110,7 @@ export default {
           to: { opacity: "1", transform: "translateX(0)" },
         },
       },
+
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

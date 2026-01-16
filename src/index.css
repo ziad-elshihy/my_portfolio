@@ -149,7 +149,7 @@
   }
 
   .stat-card {
-    @apply glass-card p-6 text-center transition-all duration-300;
+    @apply glass-card p-6 text-center transition-all duration-normal ease-smooth;
   }
 
   .stat-card:hover {
@@ -166,7 +166,7 @@
   }
 
   .nav-link {
-    @apply text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium;
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-fast text-sm font-medium;
   }
 
   .nav-link-active {
@@ -174,7 +174,7 @@
   }
 
   .skill-badge {
-    @apply px-3 py-1.5 rounded-lg bg-secondary text-sm font-medium text-foreground/90 border border-border/50 transition-all duration-200;
+    @apply px-3 py-1.5 rounded-lg bg-secondary text-sm font-medium text-foreground/90 border border-border/50 transition-all duration-fast;
   }
 
   .skill-badge:hover {

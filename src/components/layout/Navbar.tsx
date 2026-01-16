@@ -37,7 +37,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-fast ease-smooth">
               <Terminal className="w-4 h-4 text-primary" />
             </div>
             <span className="font-semibold text-foreground">
@@ -87,7 +87,7 @@ export function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
               className="md:hidden overflow-hidden"
             >
               <div className="py-4 border-t border-border">

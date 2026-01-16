@@ -1,6 +1,5 @@
 import { TestTube2, Wrench, Code, Bug, Smartphone, Database, GitBranch, FileJson, Workflow, Coffee } from 'lucide-react';
 import ScrollReveal from '../components/ui/ScrollReveal';
-import StaggeredList from '../components/ui/StaggeredList';
 import { personalData } from '@/data/personalData';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 
@@ -79,7 +78,7 @@ const iconMap: { [key: string]: React.ElementType } = {
 const Skills = () => {
   return (
     <section id="skills" className="py-24 md:py-32 relative">
-      <div className="absolute inset-0 gradient-mesh opacity-30" />
+      <div className="absolute inset-0 gradient-mesh opacity-30 " />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -92,21 +91,27 @@ const Skills = () => {
           </ScrollReveal>
 
           {/* Skills Categories */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 ">
             {skillCategories.map((category, categoryIndex) => {
               const CategoryIcon = category.icon;
               return (
                 <ScrollReveal key={category.title} delay={categoryIndex * 0.1}>
                   <div
-                    className="glass-card p-6 h-full"
+                    className="glass-card p-6 h-full group hover:scale-105 transition-all duration-300
+                    text-foreground/70 group-hover:text-foreground 
+                        group-hover:drop-shadow-[0_0_8px_var(--glow-color)]
+                    "
                     style={{
                       '--glow-color': category.color,
                     } as React.CSSProperties}
                   >
                     {/* Category Header */}
-                    <div className="flex items-center gap-3 mb-6">
+                    <div className="flex items-center gap-3 mb-6 ">
                       <div
-                        className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center"
+                        className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center
+                        transition-all duration-300
+                    text-foreground/70 group-hover:text-foreground 
+                        group-hover:drop-shadow-[0_0_8px_var(--glow-color)]"
                         style={{ background: `${category.color}20` }}
                       >
                         <CategoryIcon

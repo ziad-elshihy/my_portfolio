@@ -17,6 +17,7 @@ import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
+import MainLayout from "./layout/MainLayout";
 
 const queryClient = new QueryClient();
 
@@ -26,16 +27,16 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Index />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects/:id" element={<ProjectDetail />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/certifications" element={<Certifications />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<MainLayout><Index /></MainLayout>} />
+        <Route path="/skills" element={<MainLayout><Skills /></MainLayout>} />
+        <Route path="/projects" element={<MainLayout><Projects /></MainLayout>} />
+        <Route path="/about" element={<MainLayout><About /></MainLayout>} />
+        <Route path="/projects/:id" element={<MainLayout><ProjectDetail /></MainLayout>} />
+        <Route path="/experience" element={<MainLayout><Experience /></MainLayout>} />
+        <Route path="/certifications" element={<MainLayout><Certifications /></MainLayout>} />
+        <Route path="/contact" element={<MainLayout><Contact /></MainLayout>} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<MainLayout><NotFound /></MainLayout>} />
       </Routes>
     </AnimatePresence>
   );

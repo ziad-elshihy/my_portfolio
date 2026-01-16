@@ -25,7 +25,7 @@ const SocialIcon = ({
             className="
           relative z-10
           flex items-center justify-center
-          transition-transform duration-300
+          transition-transform duration-normal ease-smooth
           group-hover:scale-110
         "
          >
@@ -38,7 +38,7 @@ const SocialIcon = ({
           pointer-events-none
           absolute -bottom-9 left-1/2 -translate-x-1/2
           scale-0 group-hover:scale-100
-          transition-transform duration-200
+          transition-transform duration-fast
           rounded-md bg-black px-2 py-1
           text-xs text-white whitespace-nowrap
         "

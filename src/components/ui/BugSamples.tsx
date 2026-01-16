@@ -80,7 +80,7 @@ const BugSamples = () => {
 
                <StaggeredList className="space-y-6" staggerDelay={0.1}>
                   {bugSamples.map((bug) => (
-                     <div key={bug.id} className="glass-card p-6">
+                     <div key={bug.id} className="glass-card group hover:scale-105 transition-all duration-normal ease-smooth p-6">
                         {/* Header */}
                         <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                            <div className="flex items-center gap-3">
@@ -91,7 +91,7 @@ const BugSamples = () => {
                               </div>
                            </div>
                            <div className="flex items-center gap-2">
-                              <span className={`px-2 py-1 text-xs font-medium rounded ${severityColors[bug.severity]}`}>
+                              <span className={`px-2 py-1 text-xs font-medium rounded  ${severityColors[bug.severity]}`}>
                                  {bug.severity}
                               </span>
                               <span className={`flex items-center gap-1 px-2 py-1 text-xs font-medium rounded ${bug.status === 'Fixed'

@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { Hero } from "@/components/home/Hero";
+import {Hero} from "@/components/home/Hero";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { SkillsPreview } from "@/components/home/SkillsPreview";
 import ScrollProgress from '@/components/ui/ScrollProgress';
@@ -10,11 +10,13 @@ import Skills from "./Skills";
 import Experience from "./Experience";
 import { Bug } from "lucide-react";
 import BugSamples from "@/components/ui/BugSamples";
+import Scanlines from "@/components/ui/Scanlines";
 
 const Index = () => {
   return (
     <Layout>
       <ScrollProgress />
+      <Scanlines />
       <Hero />
       <About />
       <Skills />
